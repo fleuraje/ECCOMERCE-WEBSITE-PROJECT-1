@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import Skeleton from "react-loading-skeleton";
 const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
@@ -24,17 +24,41 @@ const Products = () => {
     getProducts();
   }, []);
   const Loading = () => {
-    return <>Loading...</>;
+    return(
+        <>
+            <div className="col-md-3">
+                <Skeleton height={350}/>
+            </div>
+            <div className="col-md-3">
+                <Skeleton height={350}/>
+            </div>
+            <div className="col-md-3">
+                <Skeleton height={350}/>
+            </div>
+            <div className="col-md-3">
+                <Skeleton height={350}/>
+            </div>
+            
+        </>
+
+    );
+
   };
+
+  const filterProduct= (cat) => {
+    const updatedList = data.filter((x)=>x.category === cat);
+    setFilter(updatedList);
+
+  }
   const ShowProducts = () => {
     return (
       <>
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
-          <button className="btn btn-outline-dark me-2">ALL</button>
-          <button className="btn btn-outline-dark me-2">MENS CLOTHING</button>
-          <button className="btn btn-outline-dark me-2">WOMENS CLOTHING</button>
-          <button className="btn btn-outline-dark me-2">JEWELRY</button>
-          <button className="btn btn-outline-dark me-2">ELECTRONICS</button>
+          <button className="btn btn-outline-dark me-2" onClick={()=>setFilter(data)}>ALL</button>
+          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("men's clothing")}>MENS CLOTHING</button>
+          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("women's clothing")}>WOMENS CLOTHING</button>
+          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("jewelery")}>JEWELRY</button>
+          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("electronics")}>ELECTRONICS</button>
         </div>
         {filter.map((product) => {
           return (
@@ -48,8 +72,8 @@ const Products = () => {
                   />
                   <div class="card-body">
                     <h5 class="card-title mb-0">{product.title.substring(0,12)}</h5>
-                    <p class="card-text" $>
-                      {product.price}
+                    <p class="card-text" >
+                      ${product.price}
                     </p>
                     <a href="#" class="btn btn-outline-dark ">
                       Buy Now
