@@ -6,8 +6,8 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-3
       shadow -sm">
         <div className="container">
-          <a className="navbar-brand fw bold fs-4" href="#">
-            DREAMERS COLLECTION
+          <a className="navbar-brand display-6 fw-bolder fw bold fs-4" href="#">
+           A DREAMERZ COLLECTION
           </a>
           <button
             className="navbar-toggler"
