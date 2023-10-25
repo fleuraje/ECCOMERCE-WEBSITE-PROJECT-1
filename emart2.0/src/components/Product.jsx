@@ -7,6 +7,9 @@ const Product = () => {
     const [product, setproduct] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    // You will need add an 'Add to Cart' button or similar functionality here. 
+    // This means you will need to import context so that you can update the cart throughout the app 
+    
     useEffect(() => {
         const getProduct = async () => {
             setLoading(true);

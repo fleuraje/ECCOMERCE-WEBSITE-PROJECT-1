@@ -8,10 +8,12 @@ import '../node_modules/font-awesome/css/font-awesome.min.css';
 import {BrowserRouter} from 'react-router-dom';
 
 
-
+// You will need to import your context provider here and wrap your app in it (just like BrowserRouter)
+// Make sure you set any state values (like cart) that you want to use here as well 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root')).render(
+  
   <BrowserRouter>
     <App />
   </BrowserRouter>

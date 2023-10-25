@@ -68,3 +68,26 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+NOTES 10/25 *** IF YOU MERGE THIS INTO YOUR MAIN BRANCH, MAKE SURE TO PULL DOWN THE CHANGES USING GIT PULL ** 
+
+
+[ ] Context API 
+    - To implement the context API, you will need to wrap your application in the context Provider (just like React-Router). This allows you to use context throughout your application. 
+    - Any data that needs to be used in multiple components (cart, user/authentication) should be stored in context. Information that is only needed in a single component does not need to be stored in context and can be stored in local state. 
+    - You will need to create a context folder/file and then import it into the components in order to use it. 
+    - Resources: 
+        * https://react.dev/reference/react/createContext
+        * https://www.freecodecamp.org/news/context-api-in-react/
+[ ] Make a Cart Component 
+    - User should be able to add products to cart 
+    - From the cart, user should be able to adjust quantity of items / remove items. 
+    - (once you have auth, you will need to make sure that only the authed user can see their cart )
+    - Cart component will need buttons/something to add/remove from cart. Think about what you want to happen if:
+        - A user adds the same item to the cart multiple times 
+        - A user decreases the quantity of an item in their cart to 0 
+    This will help you write the logic. 
+    - From the cart, the user should be able to checkout (i.e. navigate to the checkout page, something happens that notifies user they have successfully checked out.)
+
+[ ] Login/Logout component - Do the cart first, but this is something you will need to add. 

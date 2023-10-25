@@ -14,6 +14,7 @@ function App() {
     <Routes>
       <Route exact path="/" component={Home} />
       <Route exact path="/products" component={Products} />
+      {/* You can add a single product route here - you already have it set up. Use params (:id) */}
       </Routes>
     </>
   );
