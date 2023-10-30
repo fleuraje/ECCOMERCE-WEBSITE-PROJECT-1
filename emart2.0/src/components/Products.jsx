@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from "react";
+import { useContext, useEffect, useState } from 'react'
 import { NavLink } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
+import { CartContext } from '../context/cart'
+
+
 
 const Products = () => {
+    const { cartItems, addToCart } = useContext(CartContext);
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
@@ -16,6 +20,7 @@ const Products = () => {
         setData(await response.clone().json());
         setFilter(await response.json());
         setLoading(false);
+
       }
 
       return () => {
@@ -62,7 +67,7 @@ const Products = () => {
           <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("jewelery")}>JEWELRY</button>
           <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("electronics")}>ELECTRONICS</button>
         </div>
-        {filter.map((product) => {
+        {filter.map((product,index) => {
           return (
             <>
               <div className="col-md-3 mb-4">
@@ -77,8 +82,9 @@ const Products = () => {
                     <p class="card-text" >
                       ${product.price}
                     </p>
-                    <NavLink to={`/products/${product.id}`} class="btn btn-outline-dark ">
-                      Buy Now
+                    <NavLink to={`/products/${product.id}`} class='px-4 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700'>ADD TO CART
+
+
                     </NavLink>
                   </div>
                 </div>
