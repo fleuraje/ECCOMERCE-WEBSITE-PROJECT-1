@@ -70,7 +70,7 @@ const Products = () => {
         {filter.map((product,index) => {
           return (
             <>
-              <div className="col-md-3 mb-4">
+              <div key = {index} className="col-md-3 mb-4">
                 <div class="card h-100 text-center p-4" key={product.id}>
                   <img
                     src={product.image}
@@ -82,7 +82,7 @@ const Products = () => {
                     <p class="card-text" >
                       ${product.price}
                     </p>
-                    <NavLink to={`/products/${product.id}`} class='px-4 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700'>ADD TO CART
+                    <NavLink to={`/products/${product.id}`} class='px-4 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700'>BUY NOW
 
 
                     </NavLink>
