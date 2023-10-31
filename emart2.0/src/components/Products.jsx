@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import { NavLink } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
-import { CartContext } from '../context/cart'
+import { CartContext } from "../context/cart";
 
 
 
