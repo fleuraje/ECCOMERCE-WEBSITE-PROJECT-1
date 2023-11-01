@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from 'react'
 import { NavLink } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
-import { CartContext } from "../context/cart";
-
+import { CartContext } from '../context/ShoppingCart';
 
 
 const Products = () => {
-    const { cartItems, addToCart } = useContext(CartContext);
+  const { cartItems, addToCart } = useContext(CartContext);
+
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);

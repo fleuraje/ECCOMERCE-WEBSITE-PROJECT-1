@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
-import { CartContext } from "../context/cart";
 import Skeleton from "react-loading-skeleton";
+import { CartContext } from "../context/ShoppingCart";
 
 const Product = () => {
   const { cartItems, addToCart } = useContext(CartContext);

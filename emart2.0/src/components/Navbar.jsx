@@ -1,16 +1,15 @@
-import React, {useContext} from "react";
-import { NavLink} from "react-router-dom";
-import { CartContext} from "../context/cart";
-
+import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { CartContext } from "../context/ShoppingCart";
 const Navbar = () => {
-  const { cartItems, addToCart } = useContext(CartContext)
+  const { cartItems, addToCart } = useContext(CartContext);
+
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-white py-3
-      shadow -sm">
+      <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
         <div className="container">
-          <NavLink className="navbar-brand display-6 fw-bolder fw bold fs-4" to="#">
-           A DREAMERZ COLLECTION
+          <NavLink className="navbar-brand display-6 fw-bolder fs-4" to="#">
+            A DREAMERZ COLLECTION
           </NavLink>
           <button
             className="navbar-toggler"
@@ -35,26 +34,20 @@ const Navbar = () => {
                   Products
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/about">
-                  About
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/contact">
-                  Contact
-                </NavLink>
-              </li>
-            
+              
+             
             </ul>
-           <div className="buttons">
-            <NavLink to="/login" className="btn btn-outline-dark">
-               <i className="fa fa-sign-in me-1"></i> Login</NavLink>
-               <NavLink to="/register" className="btn btn-outline-dark ms-2">
-               <i className="fa fa-user-plus me-1"></i> Register</NavLink>
-               <NavLink to="/cart" className="btn btn-outline-dark ms-2">
-               <i className="fa fa-shopping-cart me-1"></i> Cart (0)</NavLink>
-           </div>
+            <div className="buttons">
+              <NavLink to="/login" className="btn btn-outline-dark">
+                <i className="fa fa-sign-in me-1"></i> Login
+              </NavLink>
+              <NavLink to="/register" className="btn btn-outline-dark ms-2">
+                <i className="fa fa-user-plus me-1"></i> Register
+              </NavLink>
+              <NavLink to="/cart" className="btn btn-outline-dark ms-2">
+                <i className="fa fa-shopping-cart me-1"></i> Cart ({cartItems.length})
+              </NavLink>
+            </div>
           </div>
         </div>
       </nav>
