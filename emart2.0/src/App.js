@@ -6,6 +6,7 @@ import Products from "./components/Products";
 import Product from "./components/Product";
 import { CartProvider } from "./context/ShoppingCart";
 import Cart from "./components/Cart" ;
+import Login from "./components/Login";
 function App() {
   return (
     <>
@@ -16,6 +17,9 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<Product />} />
         <Route path="/cart" element={<Cart />}/>
+        <Route path="/login" element={<Login />}/>
+
+
       </Routes>
       </CartProvider>
     </>
