@@ -6,8 +6,7 @@ const Login = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleLogin = () => {
-    // In a real application, you would perform authentication here
-    // For this example, we'll simulate a successful login if the username and password are 'admin'
+   
     if (username === 'admin' && password === 'admin') {
       setIsAuthenticated(true);
     } else {
@@ -22,29 +21,38 @@ const Login = () => {
   };
 
   return (
-    <div>
-      {isAuthenticated ? (
-        <div>
-          <p>Welcome, {username}!</p>
-          <button onClick={handleLogout}>Logout</button>
-        </div>
-      ) : (
-        <div>
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button onClick={handleLogin}>Login</button>
-        </div>
-      )}
+    <div className="container d-flex justify-content-center align-items-center vh-100">
+      <div className="card p-4 shadow">
+        {isAuthenticated ? (
+          <div>
+            <p>Welcome, {username}!</p>
+            <button onClick={handleLogout} className="btn btn-dark">
+              Logout
+            </button>
+          </div>
+        ) : (
+          <div>
+            <h3 className="mb-3">SIGN IN</h3>
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="form-control mb-2"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="form-control mb-2"
+            />
+            <button onClick={handleLogin} className="btn btn-dark">
+              Login
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
