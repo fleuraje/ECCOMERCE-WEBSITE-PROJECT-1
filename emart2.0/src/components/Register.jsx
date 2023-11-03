@@ -32,7 +32,7 @@ const Register = () => {
           </div>
         ) : (
           <div>
-            <h3 className="mb-3">Register</h3>
+            <h3 className="mb-3">REGISTER</h3>
             <input
               type="text"
               placeholder="Username"
